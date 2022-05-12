@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.logo {
+    width: 50px;
+}
+
+img{
+    width: 50px;
+}
+
+
+
+@media (max-width: 575px){
+    .container{
+        flex-direction: column;
+    }
+    .redes{
+        margin-right: 0.5em;
+    }
+    
+    .redes img{ 
+        margin: 0.3em;
+    }
+}
