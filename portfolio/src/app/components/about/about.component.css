@@ -3,7 +3,7 @@
 }
 
 div{
-    background-color: darkgray;
+    background-color: #585a52;
     text-align: center;
 }
 
@@ -18,7 +18,7 @@ div{
         border-radius: 100%;
         box-shadow: 3px 3px 3px gray;
         left: 3%;
-        top: 600px;
+        top: 450px;
 
     }
 }
@@ -30,7 +30,7 @@ div{
         border-radius: 100%;
         box-shadow: 3px 3px 3px gray;
         left: 33%;
-        top: 950px;
+        top: 300px;
 
     }
 }
