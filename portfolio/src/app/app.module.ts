@@ -14,8 +14,8 @@ import { HardAndSoftComponent } from './components/hard-and-soft/hard-and-soft.c
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { PersonService } from './services/person.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +34,10 @@ import { LogoComponent } from './components/logo/logo.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
