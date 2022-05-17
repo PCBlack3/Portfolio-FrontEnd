@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonService } from './services/person.service';
+import { EducationService } from './services/education.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { PersonService } from './services/person.service';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule
   ],
-  providers: [PersonService],
+  providers: [PersonService, EducationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,20 @@
 <div class="row">
     <h1>Educación</h1>
-    <div class="col-lg-1"></div>
+    <div class="col-lg-1">
+        <button class="btn btn-success">Agregar</button>
+        <button class="btn btn-dark">Editar</button> 
+    </div>
+
     <div class="col-lg-11">
-        <ul>
+        <ul *ngFor="let education of education">
             <li>
-                <h2>Estudio 1 </h2> 
-                <h3>tiempo:</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore natus nemo delectus magnam ut possimus, id nulla quasi iusto neque aliquam dolore vero minima debitis doloremque eaque voluptatum adipisci iste.</p>
-                <h2>Estudio 2 </h2> <h3>tiempo:</h3>
+                <h3> Título: </h3>  {{ education.title }} <button class="btn btn-danger">Eliminar</button><br>
+                <h3> Descripción: </h3> {{ education.description}}
+                
             </li>
         </ul>
     </div>
 </div>
+
+
+
