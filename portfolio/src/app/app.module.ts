@@ -17,6 +17,11 @@ import { LogoComponent } from './components/logo/logo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonService } from './services/person.service';
 import { EducationService } from './services/education.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +34,7 @@ import { EducationService } from './services/education.service';
     ProjectsComponent,
     FooterComponent,
     LogoComponent,
+    
    
   ],
   imports: [
@@ -36,7 +42,11 @@ import { EducationService } from './services/education.service';
     AppRoutingModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule, 
+    FormsModule,
+    RouterModule
+    
   ],
   providers: [PersonService, EducationService],
   bootstrap: [AppComponent]
