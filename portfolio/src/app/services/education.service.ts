@@ -22,7 +22,8 @@ export class EducationService {
   }
 
   public deleteEducation(id: any): Observable<ResponseI>{
-    return this.http.delete<ResponseI>(this.URL + '/person/' + id);
+    let direccion = (this.URL + '/' + id);
+    return this.http.delete<ResponseI>(direccion);
   }
 }
 
