@@ -19,6 +19,8 @@ import { PersonService } from './services/person.service';
 import { EducationService } from './services/education.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './views/login/login.component';
+import { PortfolioComponent } from './views/portfolio/portfolio.component';
 
 
 
@@ -34,6 +36,8 @@ import { RouterModule } from '@angular/router';
     ProjectsComponent,
     FooterComponent,
     LogoComponent,
+    LoginComponent,
+    PortfolioComponent,
     
    
   ],
@@ -44,7 +48,6 @@ import { RouterModule } from '@angular/router';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     ReactiveFormsModule, 
-    FormsModule,
     RouterModule
     
   ],

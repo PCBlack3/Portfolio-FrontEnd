@@ -1,0 +1,80 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start" id="login">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Login</h2>
+              <form [formGroup]="form" (ngSubmit)="sendLogin()">
+                 
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="email"
+                  [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors  && Email?.touched}" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Email address</label>
+                  <div *ngIf="Email?.errors && Email?.touched">
+                    <p *ngIf="Email?.hasError('required')" class="text-danger">
+                        El email es requerido
+                    </p>
+                    <p *ngIf="Email?.hasError('email')" class="text-danger">
+                        El formato del email debe ser válido.
+                    </p>
+                  </div>
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="password"
+                  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors  && Password?.touched}" id="form3Example4" class="form-control" />
+                  <label class="form-label" for="form3Example4">Password</label>
+                  <div *ngIf="Password?.errors && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')" class="text-danger">
+                        La contraseña es requerida
+                    </p>
+                    <p  class="text-danger">
+                        
+                    </p>
+                  </div>
+                </div>
+  
+              
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Login
+                </button>
+  
+    
+                 
+                
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="https://i.pinimg.com/originals/30/60/f5/3060f51816cfee4505780de0d6f374ff.jpg" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->

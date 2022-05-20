@@ -46,11 +46,11 @@
             <ul *ngFor="let project of project">
                 <li>
                     <h3> Título: </h3>  {{ project.title }} <button class="btn btn-danger" (click)="deleteById(project.id)">Eliminar</button><br>
-                    <h3> Período: </h3> {{ project.description}} <br>
-                    <img src="{{project.urlImage}}" >
-                    
+                    <h3> Descripción: </h3> {{ project.description}} <br>
+                    <img src="{{project.urlImage}}" id="my_image">
                 </li>
             </ul>
         </div>
     </div>
+       
 </div>

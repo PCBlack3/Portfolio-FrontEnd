@@ -13,7 +13,11 @@
 }
 
 .img{
-    width:auto;
-    
+    max-width:100%;
+    height:auto;    
 }
 
+#my_image{
+    max-width:100%;
+    height:auto; 
+}
