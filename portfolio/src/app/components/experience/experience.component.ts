@@ -18,6 +18,16 @@ export class ExperienceComponent implements OnInit {
     description : new FormControl('')
   })
 
+  dataExperience: Experience = new Experience;
+
+  editForm = new FormGroup({
+    id: new FormControl(''),
+    title : new FormControl(''),
+    period: new FormControl(''),
+    description : new FormControl(''),
+    person : new FormControl('')
+  })
+
   constructor(public experienceService: ExperienceService) { }
 
   ngOnInit(): void {
@@ -32,5 +42,18 @@ export class ExperienceComponent implements OnInit {
   deleteById(id: any){
     this.experienceService.deleteExperience(id).subscribe(data => console.log(data));
   }
+
+  editById(id: any){
+    this.experienceService.getExperienceById(id).subscribe(data => this.dataExperience = data);
+    this.editForm.setValue({
+      'id': this.dataExperience.id,
+      'title': this.dataExperience.title,
+      'period': this.dataExperience.period,
+      'description': this.dataExperience.description,
+      'person': this.dataExperience.person
+
+    })
+    console.log(this.editForm.value);
+ }
 
 }

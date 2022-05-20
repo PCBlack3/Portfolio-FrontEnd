@@ -17,6 +17,16 @@ export class EducationComponent implements OnInit {
     description: new FormControl('')
   });
 
+  dataEducation: Education = new Education;
+
+  editForm = new FormGroup({
+    id : new FormControl(''),
+    title: new FormControl(''),
+    description: new FormControl(''),
+    person: new FormControl('')
+
+  })
+
   constructor(public educationService: EducationService, private router: Router, private activerouter: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -36,6 +46,18 @@ export class EducationComponent implements OnInit {
     
     
   }
+
+  editById(id: any){
+    this.educationService.getEducationById(id).subscribe(data => this.dataEducation = data);
+    this.editForm.setValue({
+      'id': this.dataEducation.id,
+      'title': this.dataEducation.title,
+      'description': this.dataEducation.description,
+      'person': this.dataEducation.person
+
+    })
+    console.log(this.editForm.value);
+ }
 
 }
   

@@ -17,6 +17,10 @@ export class ProjectService {
     return this.http.get<Project[]>(this.URL + "/person/" + page);
   }
 
+  public getProjectById(page: string): Observable<Project>{
+    return this.http.get<Project>(this.URL + "/" + page);
+  }
+
   public postProject(form: Project, page: number): Observable<ResponseI>{
     return this.http.post<ResponseI>(this.URL + "/person/" + page, form);
   }

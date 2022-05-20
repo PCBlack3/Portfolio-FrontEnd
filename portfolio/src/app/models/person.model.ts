@@ -1,10 +1,11 @@
 export class Person{
-    id? : number;
-    nombre: string = "";
-    apellido: string = "";
-    urlImagen: string = "";
+    id : String = "";
+    nombre: String = "";
+    apellido: String = "";
+    urlImagen: String = "";
 
-    Constructor(nombre: string, apellido: string, urlImagen: string){
+    Constructor(id: String, nombre: String, apellido: String, urlImagen: String){
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.urlImagen = urlImagen;

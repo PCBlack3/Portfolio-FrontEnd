@@ -2,7 +2,7 @@
     <h1>Educación</h1>
     <div class="col-lg-1">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarModal">Agregar</button>
-        <button class="btn btn-dark">Editar</button> 
+        
         
         <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -41,7 +41,40 @@
         <ul *ngFor="let education of education">
             <li>
                 <h3> Título: </h3>  {{ education.title }} <button class="btn btn-danger" (click)="deleteById(education.id)">Eliminar</button><br>
-                <h3> Descripción: </h3> {{ education.description}}
+                <h3> Descripción: </h3> {{ education.description}} <button class="btn btn-primary" (click)="editById(education.id)" data-bs-toggle="modal" data-bs-target="#editEducationModal">Edit</button><br>
+
+                <div class="modal fade" id="editEducationModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 id="tituloVentana">Editar Educación</h5>
+                                <button class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <form [formGroup]="editForm">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Título</label>
+                                            <input type="text" class="form-control" placeholder="Título" formControlName="title" >
+                                        </div>                               
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Descripción</label>
+                                            <input type="text" class="form-control" placeholder="Descripción" formControlName="description" >
+                                        </div>
+                                    
+                                    </form>
+                                    
+                                </div> 
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="button" (click)="postForm(editForm.value)" data-bs-dismiss="modal"> Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </li>
         </ul>

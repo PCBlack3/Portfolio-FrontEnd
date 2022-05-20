@@ -1,12 +1,17 @@
+import { Person } from "./person.model";
+
 export class Experience{
-    id?: Number;
+    id: String = "";
     title: String = "";
     period: String = "";
     description: String = "";
+    person: Person = new Person();
 
-    Constructor(title: String, period: String, description: String){
+    Constructor(id: String, title: String, period: String, description: String, person: Person) {
+        this.id = id;
         this.title = title;
         this.period = period;
         this.description = description;
+        this.person = person;
     }
 }

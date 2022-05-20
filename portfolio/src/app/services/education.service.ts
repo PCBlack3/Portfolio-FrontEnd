@@ -17,6 +17,10 @@ export class EducationService {
     return this.http.get<Education[]>(this.URL + '/person/' + page);
   }
 
+  public getEducationById(page: string): Observable<Education>{
+    return this.http.get<Education>(this.URL + "/" + page);
+  }
+
   public postEducation(form: Education, page: number): Observable<ResponseI>{
     return this.http.post<ResponseI>(this.URL + '/person/' + page, form);
   }
