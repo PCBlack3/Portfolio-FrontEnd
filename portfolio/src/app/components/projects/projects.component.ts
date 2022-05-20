@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Project } from 'src/app/models/project.model';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -29,12 +30,18 @@ export class ProjectsComponent implements OnInit {
     person: new FormControl('')
   })
 
+  suscription: Subscription = new Subscription;
+
   constructor(public projectService: ProjectService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.projectService.getProject(1).subscribe(data => this.project = data);
     
     this.projectService.getProjectById('1').subscribe(data => this.dataProject = data);
+
+    this.suscription = this.projectService.refresh$.subscribe(() =>{
+      this.projectService.getProject(1).subscribe(data => this.project = data);
+    })
 
 
   }

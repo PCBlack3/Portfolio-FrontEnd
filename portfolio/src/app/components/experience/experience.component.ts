@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { Experience } from 'src/app/models/experience.model';
 import { ExperienceService } from 'src/app/services/experience.service';
 
@@ -28,10 +29,16 @@ export class ExperienceComponent implements OnInit {
     person : new FormControl('')
   })
 
+  suscription: Subscription = new Subscription;
+
   constructor(public experienceService: ExperienceService) { }
 
   ngOnInit(): void {
     this.experienceService.getExperience(1).subscribe(data => this.experience = data);
+
+    this.suscription = this.experienceService.refresh$.subscribe(() =>{
+      this.experienceService.getExperience(1).subscribe(data => this.experience = data);
+    })
   }
 
   postForm(form: Experience){

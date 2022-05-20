@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { Experience } from '../models/experience.model';
 import { ResponseI } from '../models/response.interface';
 
@@ -11,7 +11,13 @@ export class ExperienceService {
 
   URL = 'http://localhost:8080/api/experience'
 
+  private _refresh$ = new Subject<void>();
+
   constructor(private http: HttpClient) { }
+
+  get refresh$(){
+    return this._refresh$;
+  }
 
   public getExperience(page: number): Observable<Experience[]>{
     return this.http.get<Experience[]>(this.URL + '/person/' + page);
@@ -22,12 +28,22 @@ export class ExperienceService {
   }
 
   public postExperience(form: Experience, page: number): Observable<ResponseI>{
-    return this.http.post<ResponseI>(this.URL + '/person/' + page, form);
+    return this.http.post<ResponseI>(this.URL + '/person/' + page, form)
+    .pipe(
+      tap(() => {
+        this._refresh$.next();
+      })
+    )
   }
 
   public deleteExperience(id:any): Observable<ResponseI>{
     let direccion = (this.URL + '/' + id);
-    return this.http.delete<ResponseI>(direccion);
+    return this.http.delete<ResponseI>(direccion)
+    .pipe(
+      tap(() => {
+        this._refresh$.next();
+      })
+    )
   }
 
   
