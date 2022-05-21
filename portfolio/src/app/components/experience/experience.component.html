@@ -1,7 +1,7 @@
 <div class="row">
     <h1>Experiencia laboral</h1> 
     <div class="col-lg-1">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar</button>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addExperienceModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addExperienceModal" class="button"></button>
         
         
         <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Período</label>
-                                    <input type="text" class="form-control" placeholder="Período" formControlName="period" >
+                                    <input type="text" class="form-control" placeholder="Desde / Hasta :" formControlName="period" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Descripción</label>
@@ -45,9 +45,9 @@
         <div class="col-lg-11">
             <ul *ngFor="let experience of experience">
                 <li>
-                    <h3> Título: </h3>  {{ experience.title }} <button class="btn btn-danger" (click)="deleteById(experience.id)">Eliminar</button><br>
+                    <h3> Título: </h3>  {{ experience.title }} <button class="btn btn-primary" (mouseenter)="editById(experience.id)" (click)="editById(experience.id)" data-bs-toggle="modal" data-bs-target="#editExperienceModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(experience.id)"><img src="../../../assets/delete.svg" ></button><br>
                     <h3> Período: </h3> {{ experience.period}} <br>
-                    <h3> Descripción: </h3> {{ experience.description}} <button class="btn btn-primary" (click)="editById(experience.id)" data-bs-toggle="modal" data-bs-target="#editExperienceModal">Edit</button><br>
+                    <h3> Descripción: </h3> {{ experience.description}} 
 
                     <div class="modal fade" id="editExperienceModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">

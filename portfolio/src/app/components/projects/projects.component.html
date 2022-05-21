@@ -1,7 +1,7 @@
 <div class="row">
     <h1>Projectos Realizados</h1> 
     <div class="col-lg-1">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProjectModal">Agregar</button>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProjectModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addProjectModal" class="button"></button>
         
         
         <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
@@ -45,8 +45,8 @@
         <div class="col-lg-11">
             <ul *ngFor="let project of project">
                 <li>
-                    <h3> Título: </h3>  {{ project.title }} <button class="btn btn-danger" (click)="deleteById(project.id)">Eliminar</button><br>
-                    <h3> Descripción: </h3> {{ project.description}}  <button class="btn btn-primary" (click)="editById(project.id)" data-bs-toggle="modal" data-bs-target="#editProjectModal">Edit</button><br>
+                    <h3> Título: </h3>  {{ project.title }}  <button class="btn btn-primary" (mouseenter)="editById(project.id)" (click)="editById(project.id)" data-bs-toggle="modal" data-bs-target="#editProjectModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(project.id)"> <img src="../../../assets/delete.svg" ></button><br> 
+                    <h3> Descripción: </h3> {{ project.description}} 
 
                     <div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">

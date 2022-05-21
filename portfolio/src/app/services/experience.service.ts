@@ -25,6 +25,7 @@ export class ExperienceService {
 
   public getExperienceById(page: string): Observable<Experience>{
     return this.http.get<Experience>(this.URL + "/" + page);
+    
   }
 
   public postExperience(form: Experience, page: number): Observable<ResponseI>{

@@ -1,10 +1,10 @@
 <div class="row">
     <h1>Educación</h1>
     <div class="col-lg-1">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarModal">Agregar</button>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEducationModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addEducationModal" class="button"></button>
         
         
-        <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+        <div class="modal fade" id="addEducationModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -40,8 +40,8 @@
     <div class="col-lg-11">
         <ul *ngFor="let education of education">
             <li>
-                <h3> Título: </h3>  {{ education.title }} <button class="btn btn-danger" (click)="deleteById(education.id)">Eliminar</button><br>
-                <h3> Descripción: </h3> {{ education.description}} <button class="btn btn-primary" (click)="editById(education.id)" data-bs-toggle="modal" data-bs-target="#editEducationModal">Edit</button><br>
+                <h3> Título: </h3>  {{ education.title }} <button class="btn btn-primary" (mouseenter)="editById(education.id)" (click)="editById(education.id)" data-bs-toggle="modal" data-bs-target="#editEducationModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(education.id)"><img src="../../../assets/delete.svg" ></button><br>
+                <h3> Descripción: </h3> {{ education.description}} 
 
                 <div class="modal fade" id="editEducationModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">

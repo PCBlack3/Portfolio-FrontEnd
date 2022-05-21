@@ -9,3 +9,8 @@ div{
 h2,h3{
     display: inline;
 } 
+
+#editButton{
+    margin-right: 15px;
+}
+
