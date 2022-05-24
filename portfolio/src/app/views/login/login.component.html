@@ -26,7 +26,7 @@
                  
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" formControlName="email"
+                  <input type="email" formControlName="email" name="email" [(ngModel)]="email"
                   [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors  && Email?.touched}" id="form3Example3" class="form-control" />
                   <label class="form-label" for="form3Example3">Email address</label>
                   <div *ngIf="Email?.errors && Email?.touched">
@@ -41,7 +41,7 @@
   
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="password"
+                  <input type="password" formControlName="password" name="password" [(ngModel)]="password"
                   [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors  && Password?.touched}" id="form3Example4" class="form-control" />
                   <label class="form-label" for="form3Example4">Password</label>
                   <div *ngIf="Password?.errors && Password?.touched">

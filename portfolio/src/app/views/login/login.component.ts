@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  email: string = ''
+  password: string = '';
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.form=this.formBuilder.group({
@@ -34,7 +36,10 @@ export class LoginComponent implements OnInit {
   }
 
   sendLogin(){
-    this.router.navigate(['/portfolio']);
+    if (this.email =="PabloCabrera@ArgentinaPrograma.com" && this.password == "admin123"){
+      this.router.navigate(['/portfolio']);
+    }
+    
   }
 
  
