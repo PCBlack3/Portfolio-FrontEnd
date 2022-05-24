@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { PortfolioComponent } from './views/portfolio/portfolio.component';
+import { AlertService } from './services/alert.service';
 
 
 
@@ -51,7 +52,7 @@ import { PortfolioComponent } from './views/portfolio/portfolio.component';
     RouterModule
     
   ],
-  providers: [PersonService, EducationService],
+  providers: [PersonService, EducationService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   email: string = ''
   password: string = '';
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private alert: AlertService) {
     this.form=this.formBuilder.group({
       email:['',[Validators.required, Validators.email]],
       password:['',[Validators.required, Validators.minLength(8)]],
@@ -36,8 +37,10 @@ export class LoginComponent implements OnInit {
   }
 
   sendLogin(){
-    if (this.email =="PabloCabrera@ArgentinaPrograma.com" && this.password == "admin123"){
+    if (this.email =="pablocabrera@argentinaprograma.com" && this.password == "admin123"){
       this.router.navigate(['/portfolio']);
+    } else{
+      this.alert.alert("Email y/o Contraseña inválidos");
     }
     
   }
