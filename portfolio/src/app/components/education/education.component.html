@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="education">
     <h1>Educación</h1>
     <div class="col-lg-1">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEducationModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addEducationModal" class="button"></button>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-lg-11">
-        <ul *ngFor="let education of education">
+        <ul *ngFor="let education of education" id="education3">
             <li>
                 <h3> Título: </h3>  {{ education.title }} <button class="btn btn-primary" (mouseenter)="editById(education.id)" (click)="editById(education.id)" data-bs-toggle="modal" data-bs-target="#editEducationModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(education.id)"><img src="../../../assets/delete.svg" ></button><br>
                 <h3> Descripción: </h3> {{ education.description}} 

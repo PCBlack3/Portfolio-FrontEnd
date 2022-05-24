@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="experience">
     <h1>Experiencia laboral</h1> 
     <div class="col-lg-1">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addExperienceModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addExperienceModal" class="button"></button>
@@ -41,10 +41,10 @@
         </div>
     </div>
 
-    <div class="col-lg-11">
+    <div class="col-lg-11" id="experience2">
         <div class="col-lg-11">
-            <ul *ngFor="let experience of experience">
-                <li>
+            <ul *ngFor="let experience of experience" id="experience3">
+                <li >
                     <h3> Título: </h3>  {{ experience.title }} <button class="btn btn-primary" (mouseenter)="editById(experience.id)" (click)="editById(experience.id)" data-bs-toggle="modal" data-bs-target="#editExperienceModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(experience.id)"><img src="../../../assets/delete.svg" ></button><br>
                     <h3> Período: </h3> {{ experience.period}} <br>
                     <h3> Descripción: </h3> {{ experience.description}} 

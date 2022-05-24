@@ -14,3 +14,17 @@ h2,h3{
 #editButton{
     margin-right: 15px;
 }
+
+#education{
+    border-style: solid;
+    border-top:transparent;
+    border-width: 5px;
+}
+
+#education3{
+    border-style: transparent;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    padding: 5px;
+    background-color: rgb(122 149 155);
+}

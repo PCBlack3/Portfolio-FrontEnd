@@ -7,6 +7,12 @@ div{
     text-align: center;
 }
 
+#about3{
+    border-style:groove;
+    border-color: gray;
+    background-color: rgb(45 86 94);
+}
+
 #nombre{
     font-weight: bold;
 }
@@ -18,7 +24,7 @@ div{
         border-radius: 100%;
         box-shadow: 3px 3px 3px gray;
         left: 3%;
-        top: 450px;
+        top: 505px;
 
     }
 }
@@ -30,7 +36,7 @@ div{
         border-radius: 100%;
         box-shadow: 3px 3px 3px gray;
         left: 33%;
-        top: 300px;
+        top: 585px;
 
     }
 }
@@ -45,7 +51,7 @@ div{
     #editPhoto{
         position: absolute;
         left: 33%;
-        top: 300px;
+        top: 585px;
 
     }
 }
@@ -54,7 +60,7 @@ div{
     #editPhoto{
         position: absolute;
         left: 3%;
-        top: 450px;
+        top: 505px;
 
     }
 }

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="project">
     <h1>Projectos Realizados</h1> 
     <div class="col-lg-1">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProjectModal"><img src="../../../assets/add_circle.svg" data-bs-toggle="modal" data-bs-target="#addProjectModal" class="button"></button>
@@ -43,7 +43,7 @@
 
     <div class="col-lg-11">
         <div class="col-lg-11">
-            <ul *ngFor="let project of project">
+            <ul *ngFor="let project of project" id="project3">
                 <li>
                     <h3> Título: </h3>  {{ project.title }}  <button class="btn btn-primary" (mouseenter)="editById(project.id)" (click)="editById(project.id)" data-bs-toggle="modal" data-bs-target="#editProjectModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(project.id)"> <img src="../../../assets/delete.svg" ></button><br> 
                     <h3> Descripción: </h3> {{ project.description}} 
