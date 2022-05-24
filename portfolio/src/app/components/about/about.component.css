@@ -34,3 +34,27 @@ div{
 
     }
 }
+
+#editPhoto{
+    position: absolute;
+    z-index: 5px;
+    background-color: #585a52;
+}
+
+@media (max-width: 575px){
+    #editPhoto{
+        position: absolute;
+        left: 33%;
+        top: 300px;
+
+    }
+}
+
+@media (min-width: 576px){
+    #editPhoto{
+        position: absolute;
+        left: 3%;
+        top: 450px;
+
+    }
+}
