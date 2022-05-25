@@ -9,7 +9,7 @@ import { ResponseI } from '../models/response.interface';
 })
 export class ExperienceService {
 
-  URL = 'http://localhost:8080/api/experience'
+  URL = 'https://pcblack-portfolio.herokuapp.com/api/experience'
 
   private _refresh$ = new Subject<void>();
 

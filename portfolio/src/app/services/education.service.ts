@@ -10,7 +10,7 @@ import { ResponseI } from '../models/response.interface';
 export class EducationService {
   
 
-  URL = 'http://localhost:8080/api/education';
+  URL = 'https://pcblack-portfolio.herokuapp.com/api/education';
 
   private _refresh$ = new Subject<void>();
 

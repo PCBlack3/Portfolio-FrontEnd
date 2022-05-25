@@ -9,7 +9,7 @@ import { ResponseI } from '../models/response.interface';
 })
 export class ProjectService {
 
-  URL = 'http://localhost:8080/api/project'
+  URL = 'https://pcblack-portfolio.herokuapp.com/api/project'
 
   private _refresh$ = new Subject<void>();
 

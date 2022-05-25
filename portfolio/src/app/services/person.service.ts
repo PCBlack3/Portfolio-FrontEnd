@@ -7,7 +7,7 @@ import { ResponseI } from '../models/response.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  URL = 'http://localhost:8080/api/person';
+  URL = 'https://pcblack-portfolio.herokuapp.com/api/person';
 
   private _refresh$ = new Subject<void>();
 

@@ -46,7 +46,7 @@
             <ul *ngFor="let project of project" id="project3">
                 <li>
                     <h3> Título: </h3>  {{ project.title }}  <button class="btn btn-primary" (mouseenter)="editById(project.id)" (click)="editById(project.id)" data-bs-toggle="modal" data-bs-target="#editProjectModal" id="editButton"><img src="../../../assets/edit.svg"></button> <button class="btn btn-danger" (click)="deleteById(project.id)"> <img src="../../../assets/delete.svg" ></button><br> 
-                    <h3> Descripción: </h3> {{ project.description}} 
+                    <h3> Descripción: </h3> {{ project.description}} <br>
 
                     <div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
